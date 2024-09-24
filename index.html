@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- DaisyUI + Tailwind installation -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#B4F461",
+              secondary: "#F9F7F3",
+              neut: "#111111",
+              "neut-70": "rgba(17, 17, 17, 0.7)",
+              "neut-40": "rgba(17, 17, 17, 0.4)",
+              "neut-30": "rgba(17, 17, 17, 0.3)",
+              "neut-10": "rgba(17, 17, 17, 0.1)",
+              "neut-5": "rgba(17, 17, 17, 0.05)",
+            },
+            fontFamily: {
+              lexend: "Lexend",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
+    <!-- Modal starts here -->
+    <div
+      id="modal"
+      class="bg-neutral-950/80 h-screen w-screen fixed z-50 hidden rounded-xl"
+    >
+      <div class="flex justify-center items-center">
+        <div class="bg-white p-8 text-center">
+          <h2 class="text-5xl mb-4">Congrats!</h2>
+          <img src="./assets/coin.png" alt="" class="mx-auto mb-4" />
+          <p class="text-xl mb-4">You have donated for Humankind</p>
+          <p class="font-bold text-xl mb-4">Successfully</p>
+          <button id="close-modal" class="btn btn-lg">
+            Close confirmation
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal ends here -->
+
+    <header class="sticky top-0 z-30 backdrop-filter">
+      <div class="bg-secondary/50 backdrop-blur-[20px]">
+        <!-- Top navigation starts here -->
+        <nav class="container mx-auto flex justify-between py-6 px-4">
+          <a href="blog.html">
+            <button
+              class="btn bg-primary text-xl text-neut font-semibold"
+              id="blog"
+            >
+              Blog
+            </button>
+          </a>
+          <a href="index.html">
+            <div class="flex items-center gap-3">
+              <img src="./assets/logo.png" alt="" />
+              <span class="text-xl text-neut font-semibold"
+                >Donate Bangladesh</span
+              >
+            </div>
+          </a>
+          <div class="flex items-center gap-3">
+            <img src="./assets/coin.png" alt="" />
+            <span class="font-medium text-neut-70 text-xl" id="currentBalance"
+              >5500</span
+            >
+          </div>
+        </nav>
+        <!-- Top navigation ends here -->
+      </div>
+      <div class="bg-white/50 backdrop-blur-[20px]">
+        <!-- Switching button container starts here -->
+        <div class="flex flex-row justify-center gap-4 pt-10 pb-8">
+          <button
+            id="btn-donation"
+            class="btn btn-lg bg-primary text-xl text-neut font-semibold"
+          >
+            Donation
+          </button>
+          <button
+            id="btn-history"
+            class="btn btn-lg border border-neut-30 text-xl text-neut-70 font-semibold bg-transparent"
+          >
+            History
+          </button>
+        </div>
+        <!-- Switching button container ends here -->
+      </div>
+    </header>
+    <main>
+      <!-- Donation cards container starts here -->
+      <section id="donation" class="container mx-auto space-y-8 py-10">
+        <!-- Donation card 1 starts here -->
+        <div
+          class="border border-neut-10 p-8 gap-8 rounded-2xl flex flex-col lg:flex-row lg:justify-center lg:items-center"
+        >
+          <div class="lg:w-1/2 h-full">
+            <img src="./assets/noakhali.png" alt="" class="w-full" />
+          </div>
+          <div class="lg:w-1/2">
+            <div class="badge gap-2 py-6 px-4 rounded-lg bg-neut-5 mb-4">
+              <img src="./assets/coin.png" alt="" />
+              <span class="text-neut-70 text-base" id="donated-noakhali"
+                >0</span
+              >
+              <span class="text-neut-70 text-base"> BDT</span>
+            </div>
+            <h2
+              class="text-neut-50 font-bold text-xl mb-4"
+              id="donate-title-noakhali"
+            >
+              Donate for Flood at Noakhali, Bangladesh
+            </h2>
+            <p class="font-light text-neut-70 leading-7 mb-6">
+              The recent floods in Noakhali have caused significant damage to
+              homes infrastructure. Your donation will help provide essential
+              supplies and to those affected by this disaster. Every
+              contribution, big or small, makes difference. Please join us in
+              supporting the relief efforts and making a positive impact on the
+              lives of those in need.
+            </p>
+            <input
+              type="number"
+              id="donation-amount-noakhali"
+              placeholder="Write Donation Amount"
+              class="input input-lg input-bordered w-full font-light mb-4"
+            />
+            <button
+              class="btn btn-lg bg-primary text-xl text-neut font-semibold w-full"
+              id="btn-donate-noakhali"
+            >
+              Donate Now
+            </button>
+          </div>
+        </div>
+        <!-- Donation card 1 ends here -->
+        <!-- Donation card 2 starts here -->
+
+        <div
+          class="border border-neut-10 p-8 gap-8 rounded-2xl flex flex-col lg:flex-row lg:justify-center lg:items-center"
+        >
+          <div class="lg:w-1/2 h-full">
+            <img src="./assets/feni.png" alt="" class="w-full" />
+          </div>
+          <div class="lg:w-1/2">
+            <div class="badge gap-2 py-6 px-4 rounded-lg bg-neut-5 mb-4">
+              <img src="./assets/coin.png" alt="" />
+              <span class="text-neut-70 text-base" id="donated-feni">600</span>
+              <span class="text-neut-70 text-base"> BDT</span>
+            </div>
+            <h2
+              class="text-neut-50 font-bold text-xl mb-4"
+              id="donate-title-feni"
+            >
+              Donate for Flood Relief in Feni,Bangladesh
+            </h2>
+            <p class="font-light text-neut-70 leading-7 mb-6">
+              The recent floods in Feni have devastated local communities,
+              leading to severe disruption and loss. Your generous donation will
+              help provide immediate aid, including food, clean water, and
+              medical supplies, to those affected by this calamity. Together, we
+              can offer crucial support and help rebuild lives in the aftermath
+              of this disaster. Every contribution counts towards making a real
+              difference. Please consider donating today to assist those in
+              urgent need.
+            </p>
+            <input
+              type="number"
+              placeholder="Write Donation Amount"
+              id="donation-amount-feni"
+              class="input input-lg input-bordered w-full font-light mb-4"
+            />
+            <button
+              id="btn-donate-feni"
+              class="btn btn-lg bg-primary text-xl text-neut font-semibold w-full"
+            >
+              Donate Now
+            </button>
+          </div>
+        </div>
+        <!-- Donation card 2 ends here -->
+        <!-- Donation card 3 starts here -->
+
+        <div
+          class="border border-neut-10 p-8 gap-8 rounded-2xl flex flex-col lg:flex-row lg:justify-center lg:items-center"
+        >
+          <div class="lg:w-1/2 h-full">
+            <img src="./assets/quota-protest.png" alt="" class="w-full" />
+          </div>
+          <div class="lg:w-1/2">
+            <div class="badge gap-2 py-6 px-4 rounded-lg bg-neut-5 mb-4">
+              <img src="./assets/coin.png" alt="" />
+              <span class="text-neut-70 text-base" id="donated-quota"
+                >2400</span
+              >
+              <span class="text-neut-70 text-base"> BDT</span>
+            </div>
+            <h2
+              class="text-neut-50 font-bold text-xl mb-4"
+              id="donate-title-quota"
+            >
+              Aid for Injured in the Quota Movement
+            </h2>
+            <p class="font-light text-neut-70 leading-7 mb-6">
+              The recent Quota movement has resulted in numerous injuries and
+              significant hardship for many individuals. Your support is crucial
+              in providing medical assistance, rehabilitation, and necessary
+              supplies to those affected. By contributing, you help ensure that
+              injured individuals receive the care and support they need during
+              this challenging time. Every donation plays a vital role in
+              alleviating their suffering and aiding in their recovery. Please
+              consider making a donation to support these brave individuals in
+              their time of need.
+            </p>
+            <input
+              type="number"
+              placeholder="Write Donation Amount"
+              id="donation-amount-quota"
+              class="input input-lg input-bordered w-full font-light mb-4"
+            />
+            <button
+              id="btn-donate-quota"
+              class="btn btn-lg bg-primary text-xl text-neut font-semibold w-full"
+            >
+              Donate Now
+            </button>
+          </div>
+        </div>
+        <!-- Donation card 3 ends here -->
+      </section>
+      <!-- Donation cards container ends here -->
+      <!-- History cards container starts here -->
+      <section
+        id="history"
+        class="container mx-auto space-y-8 py-10 hidden"
+      ></section>
+      <!-- History cards container ends here -->
+    </main>
+    <footer></footer>
+    <!-- Scripts -->
+    <script src="./js/utilities.js"></script>
+    <script src="./js/features.js"></script>
+  </body>
+</html>

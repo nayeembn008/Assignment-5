@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- DaisyUI + Tailwind installation -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#B4F461",
+              secondary: "#F9F7F3",
+              neut: "#111111",
+              "neut-70": "rgba(17, 17, 17, 0.7)",
+              "neut-40": "rgba(17, 17, 17, 0.4)",
+              "neut-30": "rgba(17, 17, 17, 0.3)",
+              "neut-10": "rgba(17, 17, 17, 0.1)",
+              "neut-5": "rgba(17, 17, 17, 0.05)",
+            },
+            fontFamily: {
+              lexend: "Lexend",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
+    <header class="sticky top-0 z-30 backdrop-filter">
+      <div class="bg-secondary/50 backdrop-blur-[20px]">
+        <!-- Top navigation starts here -->
+        <nav class="container mx-auto flex justify-between py-6 px-4">
+          <a href="blog.html">
+            <button
+              class="btn bg-primary text-xl text-neut font-semibold"
+              id="blog"
+            >
+              Blog
+            </button>
+          </a>
+          <a href="index.html">
+            <div class="flex items-center gap-3">
+              <img src="./assets/logo.png" alt="" />
+              <span class="text-xl text-neut font-semibold"
+                >Donate Bangladesh</span
+              >
+            </div>
+          </a>
+          <div class="flex items-center gap-3">
+            <img src="./assets/coin.png" alt="" />
+            <span class="font-medium text-neut-70 text-xl" id="currentBalance"
+              >5500</span
+            >
+          </div>
+        </nav>
+        <!-- Top navigation ends here -->
+      </div>
+    </header>
+    <div class="container mx-auto">
+      <h2 class="text-4xl">Important FAQs</h2>
+      <div class="join join-vertical w-full">
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title text-2xl font-medium text-neut">
+            What is the Document Object Model (DOM)?
+          </div>
+          <div class="collapse-content">
+            <p class="text-neut-70 text-base">
+              The Document Object Model (DOM) is a interface that structures a
+              webpage as a tree of objects, with each object representing
+              different parts of the document, such as elements, attributes, or
+              text. It allows programming languages like JavaScript to
+              dynamically access, modify, and update the webpage’s content,
+              layout, and style.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-2xl font-medium text-neut">
+            How do you select an element from the DOM?
+          </div>
+          <div class="collapse-content">
+            <p class="text-neut-70 text-base mb-4">
+              To select an element from the DOM, you can use several methods
+              provided by JavaScript. The most common ways to do this are:
+            </p>
+            <ul class="list-disc ml-10 space-y-4">
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">getElementById</span>: Selects an
+                  element by its unique id attribute.
+                </p>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">getElementsByClassName</span>: Selects
+                  all elements that have a specific class name. This returns a
+                  live HTMLCollection (an array-like object).
+                </p>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">getElementsByTagName</span>: Selects
+                  all elements with a specific tag (e.g., div, p, span). This
+                  also returns an HTMLCollection.
+                </p>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">querySelector</span>: Selects the
+                  first element that matches a given CSS selector (e.g., #id,
+                  .class, tag).
+                </p>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">querySelectorAll</span>: Selects all
+                  elements that match a given CSS selector and returns a static
+                  NodeList (an array-like object).
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-2xl font-medium text-neut">
+            What is event delegation in the context of the DOM, and why is it
+            useful?
+          </div>
+          <div class="collapse-content space-y-4">
+            <p class="text-neut-70 text-base">
+              Event delegation is a method where you place a single event
+              listener on a parent element to manage events that occur on its
+              child elements, rather than attaching separate listeners to each
+              child. This approach relies on a concept called event bubbling,
+              where events, such as clicks or key presses, start from the
+              element where they occur (the target element) and then propagate
+              upward through its ancestors in the DOM tree until they reach the
+              top (typically the document).
+            </p>
+            <p class="text-neut-70 text-base">It is useful because</p>
+            <ul class="list-disc ml-10 space-y-4">
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">Improves Performance:</span>: Event
+                  delegation allows you to attach a single event listener to a
+                  parent element instead of multiple listeners to each child.
+                  This reduces the number of listeners in the DOM, improving
+                  performance, especially with large numbers of child elements
+                  or dynamic content.
+                </p>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">Handles Dynamic Content</span>: Event
+                  delegation automatically manages events for new child elements
+                  added to the DOM dynamically, eliminating the need to manually
+                  attach listeners. This is especially beneficial for scenarios
+                  like loading new data or creating elements on the fly, such as
+                  in infinite scroll or dynamic forms.
+                </p>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">Simplifies Code Maintenance</span>:
+                  Event delegation keeps all your event handling in one spot—the
+                  parent element—making your code cleaner and simpler to manage.
+                  This approach cuts down on duplication since you don’t have to
+                  keep adding and removing listeners for each child element. It
+                  streamlines your code and makes it easier to maintain.
+                </p>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base">
+                  <span class="font-bold">Memory Efficiency</span>: Adding
+                  multiple individual event listeners can use up more memory,
+                  especially in apps with lots of child elements. By using event
+                  delegation, you save memory because you only need a few
+                  listeners, making your application more efficient.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-2xl font-medium text-neut">
+            How do you manipulate an element's attributes and styles using the
+            DOM?
+          </div>
+          <div class="collapse-content space-y-4">
+            <p class="text-neut-70 text-base mb-8">
+              You can manipulate an element's attributes and styles using the
+              DOM through JavaScript. Here’s how you can do it:
+            </p>
+            <p class="text-xl text-neut font-bold">Manipulating Attributes</p>
+            <p class="text-neut-70 text-base">
+              You can use methods like getAttribute(), setAttribute(), and
+              removeAttribute() to manage an element's attributes.
+            </p>
+            <ul class="list-disc ml-10 space-y-4">
+              <li>
+                <p class="text-neut-70 text-base mb-4">
+                  <span class="font-bold mb-4">Get an Attribute: </span>
+                </p>
+                <div class="bg-neut-10 p-4">
+                  <div>
+                    <code
+                      >const element =
+                      document.getElementById('myElement');</code
+                    >
+                  </div>
+                  <div>
+                    <code
+                      >const value = element.getAttribute('attributeName); //
+                      Get the value of a attribute</code
+                    >
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base mb-4">
+                  <span class="font-bold mb-4">Set an Attribute: </span>
+                </p>
+
+                <div class="bg-neut-10 p-4">
+                  <div>
+                    <code
+                      >element.setAttribute('data-custom', 'newValue'); // Set a
+                      new value for a custom attribute
+                    </code>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base mb-4">
+                  <span class="font-bold mb-4">Remove an Attribute: </span>
+                </p>
+                <div class="bg-neut-10 p-4">
+                  <div>
+                    <code
+                      >element.removeAttribute('data-custom'); // Remove the
+                      custom attribute
+                    </code>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p class="text-xl text-neut font-bold mt-8">Manipulating styles</p>
+            <p class="text-neut-70 text-base">
+              You can change an element’s styles directly using the style
+              property.
+            </p>
+            <ul class="list-disc ml-10 space-y-4">
+              <li>
+                <p class="text-neut-70 text-base mb-4">
+                  <span class="font-bold mb-4">Change a Single Style: </span>
+                </p>
+                <div class="bg-neut-10 p-4">
+                  <div>
+                    <code
+                      >element.style.color = 'blue'; // Change the text color to
+                      blue
+                    </code>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base mb-4">
+                  <span class="font-bold mb-4">Set Multiple Styles</span>: You
+                  can set multiple styles at once by using the cssText property
+                  or by modifying individual style properties.
+                </p>
+
+                <div class="bg-neut-10 p-4">
+                  <div>
+                    <code
+                      >element.style.cssText = 'background-color: yellow;
+                      font-size: 20px;'; // Set multiple styles
+                    </code>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base mb-4">
+                  <span class="font-bold mb-4">Add a class: </span>
+                </p>
+                <div class="bg-neut-10 p-4">
+                  <div>
+                    <code
+                      >element.classList.add('active'); // Add a class
+                    </code>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base mb-4">
+                  <span class="font-bold mb-4">Remove a class: </span>
+                </p>
+                <div class="bg-neut-10 p-4">
+                  <div>
+                    <code
+                      >element.classList.remove('active'); // Remove a class
+                    </code>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="text-neut-70 text-base mb-4">
+                  <span class="font-bold mb-4">Toggle a class: </span>
+                </p>
+                <div class="bg-neut-10 p-4">
+                  <div>
+                    <code
+                      >element.classList.toggle('active'); // Toggle a class on
+                      or off
+                    </code>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/utilities.js"></script>
+    <script src="./js/features.js"></script>
+  </body>
+</html>
